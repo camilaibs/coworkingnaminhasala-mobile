@@ -1,0 +1,15 @@
+<ion-view title="Fique ligado!">
+  <ion-content padding="true" class="has-header">
+    <div class="list card" ng-repeat="treinamento in treinamentos">
+      <ion-item>
+        {{ treinamento.inicio | date:'dd/MM/yyyy' }} <span class="item-note">{{ treinamento.inicio | date:'HH' }}-{{ treinamento.fim | date:'HH' }}h</span>
+      </ion-item>
+      <div class="item item-body">
+        <div class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">{{ treinamento.titulo }}</p>
+        </div>
+        <a ui-sref="menu.queroQuero({id: treinamento.id})" class="button button-assertive button-block">Quero, quero!</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

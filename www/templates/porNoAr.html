@@ -1,0 +1,27 @@
+<ion-view title="Por no ar!">
+  <ion-content padding="true" class="has-header">
+    <form class="list">
+      <label class="item item-input">
+        <span class="input-label">Título</span>
+        <input type="text" ng-model="treinamento.titulo">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Quando</span>
+        <input type="date" ng-model="treinamento.inicio">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Das</span>
+        <input type="time" ng-model="treinamento.inicio">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Às</span>
+        <input type="time" ng-model="treinamento.fim">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Onde</span>
+        <input type="text" placeholder="https://youtube.com..." ng-model="treinamento.onde">
+      </label>
+      <a class="button button-assertive button-block" ng-click="cria(treinamento)">Supimpa, bora!</a>
+    </form>
+  </ion-content>
+</ion-view>

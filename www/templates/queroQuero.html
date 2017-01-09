@@ -1,0 +1,16 @@
+<ion-view title="Quero, quero!">
+  <ion-content padding="true" class="has-header">
+    <div class="show-list-numbers-and-dots">
+      <p style="color:#000000;">As transmissões são privadas, por isso, precisamos que nos diga qual é seu email.</p>
+    </div>
+    <div class="show-list-numbers-and-dots">
+      <p style="color:#000000;">Meu e-mail é:</p>
+    </div>
+    <form class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="meu@email.com" ng-model="email">
+      </label>
+    </form>
+    <a class="button button-assertive button-block" ng-click="inscreve(email)">Uhu, tô dentro!</a>
+  </ion-content>
+</ion-view>
