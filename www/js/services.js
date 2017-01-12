@@ -1,42 +1,26 @@
 angular.module('app.services', [])
 
-.service('TreinamentosService', [function(){
-    var treinamentos = [
-        {
-            id: 1,
-            titulo: 'Backizinho fala comigo, por favor, por favor...',
-            inicio: new Date(2017, 0, 8, 19, 0, 0, 0),
-            fim: new Date(2017, 0, 8, 21, 0, 0, 0),
-            onde: 'https://www.youtube.com/watch?v=8IaxMX9wkD0',
-            emails: ['camila@coworkingnaminhasala.com', 'pessoinha@email.com', 'outro@email.com']
-        },
-        {
-            id: 2,
-            titulo: 'Vamos Back, abre o jogo, fala logo quem você é!',
-            inicio: new Date(2017, 0, 11, 19, 0, 0, 0),
-            fim: new Date(2017, 0, 11, 21, 0, 0, 0),
-            onde: 'https://www.youtube.com/watch?v=bNfHHgVSKNM',
-            emails: ['amila@coworkingnaminhasala.com', 'pessoinha@email.com', 'outro@email.com']
-        }
-    ];
+.service('TreinamentosService', ['$http', function($http){
+    var api = 'http://localhost:8080';
 
+    // POST /treinamentos
     var salva = function(treinamento) {
-        treinamentos.push(treinamento);
+        return $http.post(api + '/treinamentos', treinamento);
     };
 
+    // GET /treinamentos
     var lista = function() {
-        return treinamentos
+        return $http.get(api + '/treinamentos');
     };
 
+    // GET /treinamentos/:id
     var buscaPorId = function(id) {
-        return treinamentos.find(function(treinamento) {
-            return treinamento.id == id;
-        });
+        return $http.get(api + '/treinamentos/' + id); // ex.: /treinamentos/1
     };
 
+    // PUT /treinamentos/:id
     var adiciona = function(id, email) {
-       var treinamento = buscaPorId(id);
-       treinamento.emails.push(email);
+       return $http.put(api +'/treinamentos/' + id, email);
     };
 
     return {
