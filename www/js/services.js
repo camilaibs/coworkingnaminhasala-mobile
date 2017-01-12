@@ -19,7 +19,10 @@ angular.module('app.services', [])
     };
 
     // PUT /treinamentos/:id
-    var adiciona = function(id, email) {
+    var adiciona = function(id, endereco) {
+       var email = {
+         endereco: endereco
+       };
        return $http.put(api +'/treinamentos/' + id, email);
     };
 
