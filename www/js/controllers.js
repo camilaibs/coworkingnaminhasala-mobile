@@ -37,8 +37,8 @@ function ($scope, TreinamentosService) {
         function(resposta) {
             $scope.treinamentos = resposta.data;
         },
-        function(erro) {
-            alert(erro);
+        function(resposta) {
+            alert(resposta.data);
         }
     );
 }])
