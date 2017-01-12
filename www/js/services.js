@@ -23,7 +23,7 @@ angular.module('app.services', [])
        var email = {
          endereco: endereco
        };
-       return $http.put(api +'/treinamentos/' + id, email);
+       return $http.put(api +'/treinamentos/' + id + '/emails', email);
     };
 
     return {

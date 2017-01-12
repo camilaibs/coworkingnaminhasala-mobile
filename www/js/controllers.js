@@ -3,6 +3,10 @@ angular.module('app.controllers', [])
 .controller('porNoArCtrl', ['$scope', '$state', 'TreinamentosService', 
 function ($scope, $state, TreinamentosService) {
     $scope.cria = function(treinamento) {
+        treinamento.fim.setDate(treinamento.inicio.getDate());
+        treinamento.fim.setMonth(treinamento.inicio.getMonth());
+        treinamento.fim.setFullYear(treinamento.inicio.getFullYear());
+
         TreinamentosService.salva(treinamento).then(
             function() {
                 $state.go('menu.fiqueLigado');
